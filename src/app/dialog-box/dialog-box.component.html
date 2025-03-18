@@ -1,7 +1,7 @@
 <!-- dialog-box.component.html -->
 <h1 mat-dialog-title><strong>{{action}}</strong> Record Details</h1>
 
-<div *ngIf="action === 'Add'">
+<div *ngIf="action === 'Add' && !searchHubData">
   <div mat-dialog-content>
     <mat-form-field>
       <input placeholder="Hub Code" matInput [(ngModel)]="local_data.hubCode">
@@ -12,19 +12,50 @@
   </div>
 </div>
 
-
-<div *ngIf="action === 'Update'">
+<div *ngIf="searchHubData">
   <div mat-dialog-content>
     <mat-form-field>
-      <input placeholder="{{action}} Hub Name" matInput [(ngModel)]="local_data.hubName">
+      <input placeholder="{{action}} Hub Name" matInput [(ngModel)]="searchHubData.hubCode">
     </mat-form-field>
 
-    <ng-template #elseTemplate>
-      Sure to delete <b>{{local_data.hubName}}</b>?
-    </ng-template>
+    <mat-form-field>
+      <input placeholder="{{action}} Hub Name" matInput [(ngModel)]="searchHubData.hubName">
+    </mat-form-field>
+
+  </div>
+  <div mat-dialog-actions>
+    <button  style="background-color: #da291c;" (click)="doAction()" mat-flat-button color="warn">Submit</button>
+  </div>
+</div>
+
+
+<div *ngIf="action === 'Update'" style="width: max-content;">
+  <div mat-dialog-content>
+  <div>
+    <mat-form-field>
+      <input placeholder="{{action}} Hub Name" matInput [(ngModel)]="local_data.hubName">
+    </mat-form-field>&nbsp;
+ 
+    <mat-form-field>
+      <input placeholder="{{action}} Address" matInput [(ngModel)]="local_data.addr1">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <input placeholder="{{action}} City" matInput [(ngModel)]="local_data.city">
+    </mat-form-field> &nbsp;
+    <mat-form-field>
+      <input placeholder="{{action}} Zipcode" matInput [(ngModel)]="local_data.zipCode">
+    </mat-form-field>
+  </div>
+
+  <ng-template #elseTemplate>
+    Sure to delete <b>{{local_data.hubName}}</b>?
+  </ng-template>
   </div>
   <div mat-dialog-actions>
     <button mat-button (click)="doAction()">{{action}}</button>
     <button  style="background-color: #da291c;" (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
   </div>
 </div>
+ 

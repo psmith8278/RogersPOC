@@ -10,7 +10,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { PeriodicElement } from '../model/gridData.modal';
 import { IntegrationService } from '../services/integration.service';
-import { find } from 'rxjs';
 
 @Component({
   imports: [CommonModule, MatTableModule, MatButtonModule, MatIconModule, MatFormFieldModule,
@@ -24,6 +23,7 @@ export class DialogBoxComponent {
   action:string;
   local_data:any;
   dataSource: PeriodicElement[] = [];
+  searchHubData: any;
   
   constructor(
     public dialogRef: MatDialogRef<DialogBoxComponent>,
@@ -38,9 +38,21 @@ export class DialogBoxComponent {
     this.dialogRef.close({event:this.action,data:this.local_data});
   }
 
-  fetchData(data: any) {
-    console.log('fetchData=====>', data);
-    // this.integrationService.getHubData(data).subscribe(find((data: any) => data == id));
+  fetchData(inputData: any) {
+    // this.dummyData.find(PeriodicElement => PeriodicElement.hubCode == data);
+    this.integrationService.getHubData(inputData).subscribe({
+      next : (data) =>{
+        // console.log('fetchData=====>', data.find((hubSingle: any) => hubSingle.hubCode === inputData));
+        this.searchHubData = data.find(hubSingle => hubSingle.hubCode === inputData);
+        return this.searchHubData;
+      },
+      error: (error) => {
+        console.log("Error fetching data:", error)
+      },
+      complete: () =>{
+        console.log("successfull");
+      }
+    })
   }
 
   closeDialog(){
