@@ -14,4 +14,6 @@ export interface PeriodicElement {
     logitude: string;
     parentBuhmId: string;
     status: string;
+    messageStatus: string;
+    source: string;
   }

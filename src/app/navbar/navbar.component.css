@@ -1,10 +1,20 @@
 .nav-red{
     background-color: #da291c;
+    padding: 12px;
 }
 
 .nav-red li a {
-    padding: 16px 15px;
+    padding: 10px 15px;
     color: #fff;
     font-size: 16px;
-    font-weight: 600;
+}
+
+.active-link {
+    font-weight: bold;
+    color: blue;
+    border-bottom: 2px solid #fff;
+}
+
+.nav-bar-section {
+    margin-left: 20px;
 }

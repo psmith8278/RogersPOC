@@ -1,12 +1,39 @@
 <header>
-    <nav class="navbar navbar-expand-lg nav-red">
+  <nav class="navbar navbar-expand-lg navbar-light nav-red">
+    <div class="container">
+      <a href="/">
+        <img width="120" height="24" src="https://images.ctfassets.net/h6ysm004d16d/17STiwlDODZXqUqkfBGXqc/0cb10c053987f043d8372f9f27485362/header.png" alt="Rogers Logo - Home">
+      </a>
+    
+      <div class="collapse navbar-collapse nav-bar-section" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/home']">HubSite Management</a>
+            <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active-link">RIL</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/comcast']">COMCAST</a>
+            <a class="nav-link" [routerLink]="['/comcast']" routerLinkActive="active-link">COMCAST</a>
           </li>
         </ul>
-    </nav>
+      </div>
+    </div>
+  </nav>
 </header>
+
+
+<!-- <header>
+    <nav class="navbar navbar-expand-lg nav-red">
+      <div class="container">
+        <a href="/">
+          <img width="120" height="24" src="https://images.ctfassets.net/h6ysm004d16d/17STiwlDODZXqUqkfBGXqc/0cb10c053987f043d8372f9f27485362/header.png" alt="Rogers Logo - Home">
+        </a>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active-link">HubSite Management</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/comcast']" routerLinkActive="active-link">COMCAST</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+</header> -->
