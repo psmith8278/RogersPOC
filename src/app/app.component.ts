@@ -8,13 +8,14 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, RouterOutlet, RouterModule, NavbarComponent],
+  imports: [CommonModule, RouterOutlet, RouterModule],
   schemas: [NO_ERRORS_SCHEMA],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'Rogers';
+  loginCondition = true;
 
   
 

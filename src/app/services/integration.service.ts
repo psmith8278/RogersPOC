@@ -164,8 +164,8 @@ export class IntegrationService {
     {
       "hubId": "9",
       "hubCode": "GAL2",
-      "hubName": "Denver.CO",
-      "hubType": "Secondary",
+      "hubName": "Denver.CO 2",
+      "hubType": "Secondary 2",
       "primaryHubId": "5ede4d9cf41a0058f1949bbe",
       "addr1": "123 Main St",
       "addr2": "Suite 1",
@@ -246,4 +246,13 @@ export class IntegrationService {
     }
     return throwError(() => new Error(errorMessage));
   }
+  
+  getHubData(data: any) :Observable<PeriodicElement[]> {
+    return of(this.dummyData);
+  }
+
+  updateData(data: any) : Observable<PeriodicElement[]> {
+    return of(this.dummyData);
+  }
+
 }

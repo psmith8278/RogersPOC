@@ -9,15 +9,19 @@
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <!-- <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" /> -->
+      <img src="https://images.ctfassets.net/h6ysm004d16d/17STiwlDODZXqUqkfBGXqc/0cb10c053987f043d8372f9f27485362/header.png" id="logo" alt="Logo Icon" />
     </div>
 
     <!-- Login Form -->
-    <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="User Name" required autocomplete="off">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="Password" required autocomplete="off">
-      <input type="button" class="fadeIn fourth" value="Log In" (click)="onSubmit()">
-    </form>
+    <div class="form-content">
+      <h1>Sign In</h1>
+      <p>With MyRogers Credentials</p>
+      <form>
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="User Name" required autocomplete="off">
+        <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password" required autocomplete="off">
+        <input type="button" class="fadeIn fourth" value="Log In" (click)="onSubmit()">
+      </form>
+    </div>
 
     <!-- Remind Passowrd -->
     <div id="formFooter">

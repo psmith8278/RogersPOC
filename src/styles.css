@@ -12,3 +12,25 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background-color: #da291c !important;
     color: #fff !important;
 }
+
+ul.navbar-nav {
+    width: 100%;
+    float: left;
+}
+
+li.nav-item {
+    width: auto;
+    float: left;
+}
+
+li.nav-item.last {
+    float: right;
+}
+
+header {
+    background: #da291c;
+}
+
+.navbar-nav {
+    display: inline-block !important;
+}

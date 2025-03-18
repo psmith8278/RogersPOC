@@ -9,12 +9,12 @@ import { MatTableModule } from '@angular/material/table';
 import { NavbarComponent } from '../../navbar/navbar.component';
 
 @Component({
-  selector: 'app-comcast-spip',
+  selector: 'app-comcast.ril',
   imports: [CommonModule, MatTableModule, MatButtonModule, MatIconModule, MatDialogModule,
     MatFormFieldModule, MatInputModule, NavbarComponent],
-  templateUrl: './comcast-spip.component.html',
-  styleUrl: './comcast-spip.component.css'
+  templateUrl: './comcast.ril.component.html',
+  styleUrl: './comcast.ril.component.css'
 })
-export class ComcastSPIPComponent {
+export class ComcastRilComponent {
 
 }

@@ -12,3 +12,7 @@ input[type="file"] {
 /* .mat-mdc-table tbody, .mat-mdc-table tfoot, .mat-mdc-table thead, .mat-mdc-cell, .mat-mdc-footer-cell, .mat-mdc-header-row, .mat-mdc-row, .mat-mdc-footer-row, .mat-mdc-table .mat-mdc-header-cell {
   border: 1px solid #000;
 } */
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
