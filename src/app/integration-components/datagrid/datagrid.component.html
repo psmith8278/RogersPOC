@@ -1,0 +1,42 @@
+<div class="row mar-top-bottom-20">
+    <div class="col-md-12">
+        <label for="file-upload" class="custom-file-upload btn btn-background-red">
+            Upload
+        </label>
+        <input id="file-upload" type="file" accept=".csv" (change)="handleFileSelect($event)">
+
+        <button class="btn  btn-background-red float-end">+</button>
+    </div>
+</div>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
+      <th mat-header-cell *matHeaderCellDef> {{ columnHeaders[column] | titlecase}} </th>
+      <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+    </ng-container>
+
+    <!-- Action Column -->
+    <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+		<td mat-cell *matCellDef="let element;">
+            <button mat-button color="warn" (click)="editRow(element)">
+                Edit      
+            </button>
+        </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayColumnWithActions"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayColumnWithActions;"></tr>
+  </table>
+
+
+  
+  
+
+
+  
+  

@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mar-top-bottom-20 {
+    margin-top: 20px !important;
+    margin-bottom: 20px;
+}
+
+.btn-background-red {
+    background-color: #da291c !important;
+    color: #fff !important;
+}
