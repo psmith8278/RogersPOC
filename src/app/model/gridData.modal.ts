@@ -1,5 +1,5 @@
 export interface PeriodicElement {
-    hubId: string;
+    hubId: any;
     hubCode: string;
     hubName: string;
     hubType: string;

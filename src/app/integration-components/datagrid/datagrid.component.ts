@@ -1,10 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MatTableModule} from '@angular/material/table';
+import { MatTable, MatTableModule} from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { PeriodicElement } from '../../model/gridData.modal';
 import { IntegrationService } from '../../services/integration.service';
+import { DialogBoxComponent } from '../../dialog-box/dialog-box.component';
+
+import { MatDialog } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { NavbarComponent } from '../../navbar/navbar.component';
 
 // export interface PeriodicElement {
 //   HUB_ID: string;
@@ -233,13 +240,16 @@ import { IntegrationService } from '../../services/integration.service';
 
 @Component({
   selector: 'app-datagrid',
-  imports: [CommonModule, MatTableModule, MatButtonModule, MatIconModule],
+  imports: [CommonModule, MatTableModule, MatButtonModule, MatIconModule, MatDialogModule,
+    MatFormFieldModule, MatInputModule, NavbarComponent],
   templateUrl: './datagrid.component.html',
   styleUrl: './datagrid.component.css'
 })
 export class DatagridComponent implements OnInit {
+  @ViewChild(MatTable, { static: true })
+  table!: MatTable<any>;
 
-  constructor(private integrationService:IntegrationService){
+  constructor(private integrationService:IntegrationService, public dialog: MatDialog){
 
   }
 
@@ -312,6 +322,64 @@ export class DatagridComponent implements OnInit {
         return acc;
       },{} as any);
     })
+  }
+
+  openDialog(action: any, obj:any,) {
+    // const index = ELEMENT_DATA.findIndex(item => item.Hub_Code === action.Hub_Code);
+    // if(index > -1) {
+    //   ELEMENT_DATA[index] = action;
+    // }
+    obj.action = action;
+    const dialogRef = this.dialog.open(DialogBoxComponent, {
+      width: '250px',
+      data:obj
+    });
+
+    dialogRef.afterClosed().subscribe((result: { event: string; }) => {
+      console.log(result);
+      if(result.event == 'Add'){
+        this.addRowData(result);
+      }else if(result.event == 'Update'){
+        this.updateRowData(result);
+      }else if(result.event == 'Delete'){
+        //this.deleteRowData(result.data);
+      }
+    });
+  }
+
+  updateRowData(row_obj : any){
+    console.log('updateRowData====>', this.dataSource);
+    this.dataSource = this.dataSource.filter((value,key)=>{
+      console.log(value.hubId, row_obj.data.hubId);
+      if(value.hubId == row_obj.data.hubId){
+        console.log(value);
+        value.hubName = row_obj.data.hubName;
+      }
+      return true;
+    });
+  }
+
+  addRowData(row_obj : any){
+    console.log('updateRowData====>', this.dataSource);
+    var d = new Date();
+    this.dataSource.push({
+      hubId: d.getTime(),
+      hubName: row_obj.data.hubName,
+      hubCode: '',
+      hubType: '',
+      primaryHubId: '',
+      addr1: 'test',
+      addr2: 'test2',
+      city: 'ch',
+      state: 'tn',
+      zipCode: '88',
+      serviceStatus: 'A',
+      lattitude: '',
+      logitude: '',
+      parentBuhmId: '',
+      status: ''
+    });
+    this.table.renderRows();
   }
 
 }

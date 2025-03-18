@@ -8,3 +8,7 @@ input[type="file"] {
     padding: 6px 12px;
     cursor: pointer;
   }
+
+  ::ng-deep .mat-form-field-underline {
+    display: none;
+  }

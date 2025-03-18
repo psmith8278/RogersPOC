@@ -9,7 +9,7 @@ export class IntegrationService {
 
   private dummyData : PeriodicElement[] = [
     {
-        "hubId": "5ede4d9cf41a0058f1949bbf",
+        "hubId": "5ede4d9cf41a0058f19dsgsdgs",
         "hubCode": "GAL2",
         "hubName": "Denver.CO",
         "hubType": "Secondary",
@@ -26,7 +26,7 @@ export class IntegrationService {
         "status": "true"
     },
     {
-      "hubId": "5ede4d9cf41a0058f1949bbf",
+      "hubId": "5ede4d9cf41a0058fsdfsqw",
       "hubCode": "GAL2",
       "hubName": "Denver.CO",
       "hubType": "Secondary",
@@ -167,4 +167,9 @@ export class IntegrationService {
   getData() : Observable<PeriodicElement[]> {
     return of(this.dummyData);
   }
+
+  getHubData(data: any) :Observable<PeriodicElement[]> {
+    return of(this.dummyData);
+  }
+
 }
