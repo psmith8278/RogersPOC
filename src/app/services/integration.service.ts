@@ -251,8 +251,10 @@ export class IntegrationService {
     return of(this.dummyData);
   }
 
-  updateData(data: any) : Observable<PeriodicElement[]> {
-    return of(this.dummyData);
+  updateData(data: any) : Observable<any> {
+    console.log('Simulated API request:', data);
+    const fakeResponse = { success: true, message: 'data saved successfully', id: Math.floor(Math.random() * 1000) }
+    return of(fakeResponse).pipe(delay(500));
   }
 
 }

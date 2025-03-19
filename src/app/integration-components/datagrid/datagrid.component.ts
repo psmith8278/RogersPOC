@@ -122,6 +122,7 @@ export class DatagridComponent implements OnInit {
     obj.action = action;
     const dialogRef = this.dialog.open(DialogBoxComponent, {
       width: 'max-content',
+      maxWidth: 'fit-content',
       data:obj
     });
 
@@ -146,7 +147,18 @@ export class DatagridComponent implements OnInit {
         value.city = row_obj.data.city;
         value.zipCode = row_obj.data.zipCode;
         value.addr1 = row_obj.data.addr1;
- 
+        value.hubId = row_obj.data.hubId;
+        value.hubCode = row_obj.data.hubCode;
+        value.hubType = row_obj.data.hubType;
+        value.addr2 = row_obj.data.addr2;
+        value.primaryHubId = row_obj.data.primaryHubId;
+        value.state = row_obj.data.state;
+        value.serviceStatus = row_obj.data.serviceStatus;
+        value.lattitude = row_obj.data.lattitude;
+        value.logitude = row_obj.data.logitude;
+        value.parentBuhmId = row_obj.data.parentBuhmId;
+        value.status = row_obj.data.status;
+
         this.integrationService.updateData(value).subscribe({
           next : (data) =>{
             this.dataSource = data;
@@ -155,12 +167,13 @@ export class DatagridComponent implements OnInit {
             console.log("Error fetching data:", error)
           },
           complete: () =>{
-            console.log("successfull");
+            alert("Data updated Successfully");
           }
         })
       }
       return true;
     });
+    
   }
 
   addRowData(row_obj : any){

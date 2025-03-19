@@ -42,7 +42,7 @@ export class DialogBoxComponent {
     // this.dummyData.find(PeriodicElement => PeriodicElement.hubCode == data);
     this.integrationService.getHubData(inputData).subscribe({
       next : (data) =>{
-        // console.log('fetchData=====>', data.find((hubSingle: any) => hubSingle.hubCode === inputData));
+        console.log('fetchData=====>', data.find((hubSingle: any) => hubSingle.hubCode === inputData));
         this.searchHubData = data.find(hubSingle => hubSingle.hubCode === inputData);
         return this.searchHubData;
       },
