@@ -1,0 +1,17 @@
+{
+    "hubId": 1,
+    "hubCode": 50,
+    "hubName": "TEST",
+    "hubType": "TYPE",
+    "primaryHubId": "PRIMARY_HUB",
+    "addr1": "13866 88 Avenue",
+    "addr2": "",
+    "city": "SURREY",
+    "state": "BC",
+    "zipCode": "V3V7K2",
+    "serviceStatus": "Active",
+    "lattitude": "lattitude",
+    "logitude": "logitude",
+    "parentBhumId": "parentBhumId",
+    "status": "true"
+}

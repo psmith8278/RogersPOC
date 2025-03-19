@@ -1,0 +1,32 @@
+{
+  "partner": [
+    "comcast",
+    "rogers"
+  ],
+  "createdBy": "user id",
+  "modifiedBy": "string",
+  "hub_id": "5ede4d9cf41a0058f1949bbe",
+  "hub": {
+    "hubCode": "GAL1",
+    "hubName": "Aurora.CO",
+    "hubType": "Primary or Secondary",
+    "primaryHubId": "5ede4d9cf41a0058f1949bbe",
+    "addr1": "375 Rockbridge Rd NW",
+    "addr2": "Unit 2",
+    "city": "LILBURN",
+    "BuhmId": "5ede4d9cf41a0058f1949bbe",
+    "countryCode": "USA or CAN",
+    "locality": "Specific information for hubsite",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -84.16322687,
+        33.88408157
+      ]
+    },
+    "serviceStatus": "I",
+    "state": "GA",
+    "zipCode": "30047",
+    "timezone": ""
+  }
+}
