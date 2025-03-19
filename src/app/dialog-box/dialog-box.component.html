@@ -13,15 +13,87 @@
 </div>
 
 <div *ngIf="searchHubData">
-  <div mat-dialog-content>
-    <mat-form-field>
-      <input placeholder="{{action}} Hub Name" matInput [(ngModel)]="searchHubData.hubCode">
-    </mat-form-field>
+  <div mat-dialog-content class="">
+    <!-- <div class=""> -->
+        <mat-form-field appearance="fill">
+          <mat-label class="edit_label" style="display: block;">Hub Type</mat-label>
+          <input placeholder="{{action}} HubType" matInput [(ngModel)]="searchHubData.hubType">
+        </mat-form-field> &nbsp;
+        <mat-form-field appearance="fill">
+          <mat-label class="edit_label" style="display: block;">HubCode</mat-label>
+          <input placeholder="{{action}} HubCode" matInput [(ngModel)]="searchHubData.hubCode">
+        </mat-form-field> &nbsp;
+        
+        <mat-form-field appearance="fill">
+          <mat-label class="edit_label" style="display: block;">Hub Name</mat-label>
+          <input placeholder="{{action}} Hub Name" matInput [(ngModel)]="searchHubData.hubName">
+        </mat-form-field>
+    <!-- </div> -->
+    
+    <div class="">
+      <mat-form-field appearance="fill">
+        <mat-label class="edit_label" style="display: block;">Address</mat-label> 
+        <input placeholder="{{action}} Address" matInput [(ngModel)]="searchHubData.addr1">
+      </mat-form-field>&nbsp;
 
-    <mat-form-field>
-      <input placeholder="{{action}} Hub Name" matInput [(ngModel)]="searchHubData.hubName">
-    </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label class="edit_label" style="display: block;">Address 2</mat-label>
+          <input placeholder="{{action}} Address2" matInput [(ngModel)]="searchHubData.addr2">
+        </mat-form-field>&nbsp;
 
+          <mat-form-field appearance="fill">
+            <mat-label class="edit_label" style="display: block;">Lattitude</mat-label> 
+            <input placeholder="{{action}} lattitude" matInput [(ngModel)]="searchHubData.lattitude">
+          </mat-form-field> 
+      </div>
+    <div class="">
+      <mat-form-field appearance="fill">
+        <mat-label class="edit_label" style="display: block;">primaryHub</mat-label>
+        <input placeholder="{{action}} primaryHubId" matInput [(ngModel)]="searchHubData.primaryHubId">
+      </mat-form-field> &nbsp;
+
+      <mat-form-field appearance="fill">
+        <mat-label class="edit_label" style="display: block;">State</mat-label>
+        <input placeholder="{{action}} State" matInput [(ngModel)]="searchHubData.state">
+      </mat-form-field> &nbsp;
+
+      <mat-form-field appearance="fill">
+        <mat-label class="edit_label" style="display: block;">serviceStatus</mat-label>
+        <input placeholder="{{action}} serviceStatus" matInput [(ngModel)]="searchHubData.serviceStatus">
+      </mat-form-field> 
+    </div>
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label class="edit_label" style="display: block;">City</mat-label>
+      <input placeholder="{{action}} City" matInput [(ngModel)]="searchHubData.city">
+    </mat-form-field>  &nbsp; 
+    
+    <mat-form-field appearance="fill">
+      <mat-label class="edit_label" style="display: block;">Zipcode</mat-label>
+      <input placeholder="{{action}} Zipcode" matInput [(ngModel)]="searchHubData.zipCode">
+    </mat-form-field>   &nbsp;   
+
+    <mat-form-field appearance="fill">
+      <mat-label class="edit_label" style="display: block;">Logitude</mat-label>
+      <input placeholder="{{action}} logitude" matInput [(ngModel)]="searchHubData.logitude">
+    </mat-form-field> 
+  </div>
+<div>
+    <mat-form-field appearance="fill">
+      <mat-label class="edit_label" style="display: block;">parentBuhmId</mat-label>
+      <input placeholder="{{action}} parentBuhmId" matInput [(ngModel)]="searchHubData.parentBuhmId">
+    </mat-form-field> &nbsp;
+
+    <mat-form-field appearance="fill">
+      <mat-label class="edit_label" style="display: block;">status</mat-label>
+      <input placeholder="{{action}} status" matInput [(ngModel)]="searchHubData.status">
+    </mat-form-field> 
+
+  </div>
+
+    <ng-template #elseTemplate>
+      Sure to delete <b>{{local_data.hubName}}</b>?
+    </ng-template>
   </div>
   <div mat-dialog-actions>
     <button  style="background-color: #da291c;" (click)="doAction()" mat-flat-button color="warn">Submit</button>
@@ -29,29 +101,88 @@
 </div>
 
 
-<div *ngIf="action === 'Update'" style="width: max-content;">
-  <div mat-dialog-content>
+<div *ngIf="action === 'Update'" style="width: max-content;" class="">
+  <div mat-dialog-content class="">
+    <!-- <div class=""> -->
+        <mat-form-field appearance="fill">
+          <mat-label class="edit_label" style="display: block;">Hub Type</mat-label>
+          <input placeholder="{{action}} HubType" matInput [(ngModel)]="local_data.hubType">
+        </mat-form-field> &nbsp;
+        <mat-form-field appearance="fill">
+          <mat-label class="edit_label" style="display: block;">HubCode</mat-label>
+          <input placeholder="{{action}} HubCode" matInput [(ngModel)]="local_data.hubCode">
+        </mat-form-field> &nbsp;
+        
+        <mat-form-field appearance="fill">
+          <mat-label class="edit_label" style="display: block;">Hub Name</mat-label>
+          <input placeholder="{{action}} Hub Name" matInput [(ngModel)]="local_data.hubName">
+        </mat-form-field>
+    <!-- </div> -->
+    
+    <div class="">
+      <mat-form-field appearance="fill">
+        <mat-label class="edit_label" style="display: block;">Address</mat-label> 
+        <input placeholder="{{action}} Address" matInput [(ngModel)]="local_data.addr1">
+      </mat-form-field>&nbsp;
+
+        <mat-form-field appearance="fill">
+          <mat-label class="edit_label" style="display: block;">Address 2</mat-label>
+          <input placeholder="{{action}} Address2" matInput [(ngModel)]="local_data.addr2">
+        </mat-form-field>&nbsp;
+
+          <mat-form-field appearance="fill">
+            <mat-label class="edit_label" style="display: block;">Lattitude</mat-label> 
+            <input placeholder="{{action}} lattitude" matInput [(ngModel)]="local_data.lattitude">
+          </mat-form-field> 
+      </div>
+    <div class="">
+      <mat-form-field appearance="fill">
+        <mat-label class="edit_label" style="display: block;">primaryHub</mat-label>
+        <input placeholder="{{action}} primaryHubId" matInput [(ngModel)]="local_data.primaryHubId">
+      </mat-form-field> &nbsp;
+
+      <mat-form-field appearance="fill">
+        <mat-label class="edit_label" style="display: block;">State</mat-label>
+        <input placeholder="{{action}} State" matInput [(ngModel)]="local_data.state">
+      </mat-form-field> &nbsp;
+
+      <mat-form-field appearance="fill">
+        <mat-label class="edit_label" style="display: block;">serviceStatus</mat-label>
+        <input placeholder="{{action}} serviceStatus" matInput [(ngModel)]="local_data.serviceStatus">
+      </mat-form-field> 
+    </div>
   <div>
-    <mat-form-field>
-      <input placeholder="{{action}} Hub Name" matInput [(ngModel)]="local_data.hubName">
-    </mat-form-field>&nbsp;
- 
-    <mat-form-field>
-      <input placeholder="{{action}} Address" matInput [(ngModel)]="local_data.addr1">
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label class="edit_label" style="display: block;">City</mat-label>
       <input placeholder="{{action}} City" matInput [(ngModel)]="local_data.city">
-    </mat-form-field> &nbsp;
-    <mat-form-field>
+    </mat-form-field>  &nbsp; 
+    
+    <mat-form-field appearance="fill">
+      <mat-label class="edit_label" style="display: block;">Zipcode</mat-label>
       <input placeholder="{{action}} Zipcode" matInput [(ngModel)]="local_data.zipCode">
-    </mat-form-field>
+    </mat-form-field>   &nbsp;   
+
+    <mat-form-field appearance="fill">
+      <mat-label class="edit_label" style="display: block;">Logitude</mat-label>
+      <input placeholder="{{action}} logitude" matInput [(ngModel)]="local_data.logitude">
+    </mat-form-field> 
+  </div>
+<div>
+    <mat-form-field appearance="fill">
+      <mat-label class="edit_label" style="display: block;">parentBuhmId</mat-label>
+      <input placeholder="{{action}} parentBuhmId" matInput [(ngModel)]="local_data.parentBuhmId">
+    </mat-form-field> &nbsp;
+
+    <mat-form-field appearance="fill">
+      <mat-label class="edit_label" style="display: block;">status</mat-label>
+      <input placeholder="{{action}} status" matInput [(ngModel)]="local_data.status">
+    </mat-form-field> 
+
   </div>
 
-  <ng-template #elseTemplate>
-    Sure to delete <b>{{local_data.hubName}}</b>?
-  </ng-template>
+    <ng-template #elseTemplate>
+      Sure to delete <b>{{local_data.hubName}}</b>?
+    </ng-template>
   </div>
   <div mat-dialog-actions>
     <button mat-button (click)="doAction()">{{action}}</button>
