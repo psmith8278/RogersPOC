@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatTable, MatTableModule} from '@angular/material/table';
+import { MatTable, MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { PeriodicElement } from '../../model/gridData.modal';
@@ -24,7 +24,7 @@ export class DatagridComponent implements OnInit {
   @ViewChild(MatTable, { static: true })
   table!: MatTable<any>;
 
-  constructor(private integrationService:IntegrationService, public dialog: MatDialog){
+  constructor(private integrationService: IntegrationService, public dialog: MatDialog) {
 
   }
 
@@ -40,17 +40,17 @@ export class DatagridComponent implements OnInit {
     "source"
   ]
   dataSource: PeriodicElement[] = [];
-  
+
   records: any[] = [];
   headers: string[] = [];
 
-  columnHeaders: {[key:string]:string} = {
+  columnHeaders: { [key: string]: string } = {
     "hubCode": "Hub Code",
-    "hubName":"Hub Name",
-    "hubType":"Hub Type",
-    "city":"City",
-    "state":"State",
-    "serviceStatus":"Service Status",
+    "hubName": "Hub Name",
+    "hubType": "Hub Type",
+    "city": "City",
+    "state": "State",
+    "serviceStatus": "Service Status",
     "status": "Status",
     "messageStatus": "Message Status",
     "source": "source"
@@ -62,20 +62,24 @@ export class DatagridComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.getRogersGridData();
+  }
+
+  getRogersGridData() {
     this.integrationService.getData().subscribe({
-      next : (data) =>{
+      next: (data) => {
         this.dataSource = data;
       },
       error: (error) => {
         console.log("Error fetching data:", error)
       },
-      complete: () =>{
+      complete: () => {
         console.log("successfull");
       }
     })
   }
 
-  editRow(row: any){
+  editRow(row: any) {
     console.log(row);
   }
 
@@ -84,15 +88,15 @@ export class DatagridComponent implements OnInit {
       next: (response) => {
         alert(`Success:${response.message} (ID: ${response.id})`);
       },
-      error:() =>{
+      error: () => {
         console.log("something went wrong");
       }
     })
   }
 
-  handleFileSelect(evt:any) {
+  handleFileSelect(evt: any) {
     var file = evt.target.files[0]; // FileList object
-    if(file) {
+    if (file) {
       const reader = new FileReader();
       reader.readAsText(file);
       reader.onload = () => {
@@ -107,14 +111,14 @@ export class DatagridComponent implements OnInit {
     this.headers = rows[0].split(",").map(header => header.trim());
     this.records = rows.slice(1).map(row => {
       const values = row.split(",").map(value => value.trim());
-      return this.headers.reduce((acc,header, index) => {
+      return this.headers.reduce((acc, header, index) => {
         acc[header] = values[index] || "";
         return acc;
-      },{} as any);
+      }, {} as any);
     })
   }
 
-  openDialog(action: any, obj:any,) {
+  openDialog(action: any, obj: any,) {
     // const index = ELEMENT_DATA.findIndex(item => item.Hub_Code === action.Hub_Code);
     // if(index > -1) {
     //   ELEMENT_DATA[index] = action;
@@ -123,60 +127,58 @@ export class DatagridComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogBoxComponent, {
       width: 'max-content',
       maxWidth: 'fit-content',
-      data:obj
+      data: obj
     });
 
     dialogRef.afterClosed().subscribe((result: { event: string; }) => {
       console.log(result);
-      if(result.event == 'Add'){
+      if (result.event == 'Add') {
         this.addRowData(result);
-      }else if(result.event == 'Update'){
+      } else if (result.event == 'Update') {
         this.updateRowData(result);
-      }else if(result.event == 'Delete'){
+      } else if (result.event == 'Delete') {
         //this.deleteRowData(result.data);
       }
     });
   }
 
-  updateRowData(row_obj : any){
+  updateRowData(row_obj: any) {
     console.log('updateRowData====>', this.dataSource);
-    this.dataSource = this.dataSource.filter((value,key)=>{
-      console.log(value.hubId, row_obj.data.hubId);
-      if(value.hubId == row_obj.data.hubId){
-        value.hubName = row_obj.data.hubName;
-        value.city = row_obj.data.city;
-        value.zipCode = row_obj.data.zipCode;
-        value.addr1 = row_obj.data.addr1;
-        value.hubId = row_obj.data.hubId;
-        value.hubCode = row_obj.data.hubCode;
-        value.hubType = row_obj.data.hubType;
-        value.addr2 = row_obj.data.addr2;
-        value.primaryHubId = row_obj.data.primaryHubId;
-        value.state = row_obj.data.state;
-        value.serviceStatus = row_obj.data.serviceStatus;
-        value.lattitude = row_obj.data.lattitude;
-        value.logitude = row_obj.data.logitude;
-        value.parentBuhmId = row_obj.data.parentBuhmId;
-        value.status = row_obj.data.status;
+    const sendData: PeriodicElement = {
+      hubId: row_obj.data.hubId,
+      hubCode: row_obj.data.hubCode,
+      hubName: row_obj.data.hubName,
+      hubType: row_obj.data.hubType,
+      primaryHubId: row_obj.data.primaryHubId,
+      addr1: row_obj.data.addr1,
+      addr2: row_obj.data.addr2,
+      city: row_obj.data.city,
+      state: row_obj.data.state,
+      zipCode: row_obj.data.zipCode,
+      serviceStatus: row_obj.data.serviceStatus,
+      lattitude: row_obj.data.lattitude,
+      logitude: row_obj.data.logitude,
+      parentBhumId: row_obj.data.parentBhumId,
+      status: row_obj.data.status,
+      messageStatus: row_obj.data.messageStatus,
+      source: row_obj.data.source,
+    };
 
-        this.integrationService.updateData(value).subscribe({
-          next : (data) =>{
-            this.dataSource = data;
-          },
-          error: (error) => {
-            console.log("Error fetching data:", error)
-          },
-          complete: () =>{
-            alert("Data updated Successfully");
-          }
-        })
+    this.integrationService.updateData(sendData).subscribe({
+      next: (data) => {
+        //this.dataSource = data;
+      },
+      error: (error) => {
+        console.log("Error fetching data:", error)
+      },
+      complete: () => {
+        this.getRogersGridData();
+        alert("Data updated Successfully");
       }
-      return true;
-    });
-    
+    })
   }
 
-  addRowData(row_obj : any){
+  addRowData(row_obj: any) {
     console.log('updateRowData====>', this.dataSource);
     var d = new Date();
     this.dataSource.push({
@@ -193,7 +195,7 @@ export class DatagridComponent implements OnInit {
       serviceStatus: 'A',
       lattitude: '',
       logitude: '',
-      parentBuhmId: '',
+      parentBhumId: '',
       status: '',
       messageStatus: '',
       source: ''

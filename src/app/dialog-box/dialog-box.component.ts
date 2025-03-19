@@ -47,10 +47,10 @@ export class DialogBoxComponent {
         return this.searchHubData;
       },
       error: (error) => {
-        console.log("Error fetching data:", error)
+        alert(`Error fetching data:${error}`)
       },
       complete: () =>{
-        console.log("successfull");
+        alert("successfull");
       }
     })
   }

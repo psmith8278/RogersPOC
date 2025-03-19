@@ -12,7 +12,7 @@ export interface PeriodicElement {
     serviceStatus:string;
     lattitude:string;
     logitude: string;
-    parentBuhmId: string;
+    parentBhumId: string;
     status: string;
     messageStatus: string;
     source: string;

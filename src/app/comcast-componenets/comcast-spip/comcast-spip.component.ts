@@ -33,7 +33,7 @@ export class ComcastSPIPComponent {
         "serviceStatus": "A",
         "lattitude": "-104.9903",
         "logitude": "39.7392",
-        "parentBuhmId": "5ede4d9cf41a0058f1949bbe",
+        "parentBhumId": "5ede4d9cf41a0058f1949bbe",
         "status": "true",
         "messageStatus": "Success",
         "source": "east"
@@ -52,7 +52,7 @@ export class ComcastSPIPComponent {
         "serviceStatus": "A",
         "lattitude": "-105.2705",
         "logitude": "40.015",
-        "parentBuhmId": "5ede4d9cf41a0058f1949bbe",
+        "parentBhumId": "5ede4d9cf41a0058f1949bbe",
         "status": "true",
         "messageStatus": "Success",
         "source": "west"
@@ -71,7 +71,7 @@ export class ComcastSPIPComponent {
         "serviceStatus": "A",
         "lattitude": "-104.8214",
         "logitude": "38.8339",
-        "parentBuhmId": "5ede4d9cf41a0058f1949bbe",
+        "parentBhumId": "5ede4d9cf41a0058f1949bbe",
         "status": "true",
         "messageStatus": "Success",
         "source": "west"
@@ -90,7 +90,7 @@ export class ComcastSPIPComponent {
         "serviceStatus": "A",
         "lattitude": "-104.9903",
         "logitude": "39.7392",
-        "parentBuhmId": "5ede4d9cf41a0058f1949bbe",
+        "parentBhumId": "5ede4d9cf41a0058f1949bbe",
         "status": "true",
         "messageStatus": "Failure",
         "source": "west"
@@ -109,7 +109,7 @@ export class ComcastSPIPComponent {
         "serviceStatus": "A",
         "lattitude": "51.0447",
         "logitude": "-114.0719",
-        "parentBuhmId": "5ede4d9cf41a0058f1949bb1",
+        "parentBhumId": "5ede4d9cf41a0058f1949bb1",
         "status": "true",
         "messageStatus": "Failure",
         "source": "west"
@@ -128,7 +128,7 @@ export class ComcastSPIPComponent {
         "serviceStatus": "A",
         "lattitude": "53.5461",
         "logitude": "-113.4938",
-        "parentBuhmId": "5ede4d9cf41a0058f1949bb3",
+        "parentBhumId": "5ede4d9cf41a0058f1949bb3",
         "status": "true",
         "messageStatus": "Saved",
         "source": "west"
@@ -147,7 +147,7 @@ export class ComcastSPIPComponent {
         "serviceStatus": "A",
         "lattitude": "53.5461",
         "logitude": "-113.4938",
-        "parentBuhmId": "5ede4d9cf41a0058f1949bb3",
+        "parentBhumId": "5ede4d9cf41a0058f1949bb3",
         "status": "true",
         "messageStatus": "Failure",
         "source": "west"
