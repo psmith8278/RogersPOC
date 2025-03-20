@@ -78,7 +78,31 @@
       <input placeholder="{{action}} logitude" matInput [(ngModel)]="searchHubData.logitude">
     </mat-form-field> 
   </div>
-<div>
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label class="edit_label" style="display: block;">partnerID</mat-label>
+      <input placeholder="{{action}} partnerID" matInput [(ngModel)]="searchHubData.partnerID">
+    </mat-form-field> &nbsp;
+
+    <mat-form-field appearance="fill">
+      <mat-label class="edit_label" style="display: block;">locality</mat-label>
+      <input placeholder="{{action}} locality" matInput [(ngModel)]="searchHubData.locality">
+    </mat-form-field> &nbsp;
+
+    <mat-form-field appearance="fill">
+      <mat-label class="edit_label" style="display: block;">timezone</mat-label>
+      <input placeholder="{{action}} timezone" matInput [(ngModel)]="searchHubData.timezone">
+    </mat-form-field> &nbsp;
+
+  </div>
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label class="edit_label" style="display: block;">countryCode</mat-label>
+      <input placeholder="{{action}} countryCode" matInput [(ngModel)]="searchHubData.countryCode">
+    </mat-form-field> &nbsp;
+
     <mat-form-field appearance="fill">
       <mat-label class="edit_label" style="display: block;">parentBhumId</mat-label>
       <input placeholder="{{action}} parentBhumId" matInput [(ngModel)]="searchHubData.parentBhumId">
@@ -169,6 +193,29 @@
     </mat-form-field> 
   </div>
 <div>
+    <mat-form-field appearance="fill">
+      <mat-label class="edit_label" style="display: block;">partnerID</mat-label>
+      <input placeholder="{{action}} partnerID" matInput [(ngModel)]="local_data.partnerID">
+    </mat-form-field> &nbsp;
+
+    <mat-form-field appearance="fill">
+      <mat-label class="edit_label" style="display: block;">locality</mat-label>
+      <input placeholder="{{action}} locality" matInput [(ngModel)]="local_data.locality">
+    </mat-form-field> &nbsp;
+
+    <mat-form-field appearance="fill">
+      <mat-label class="edit_label" style="display: block;">timezone</mat-label>
+      <input placeholder="{{action}} timezone" matInput [(ngModel)]="local_data.timezone">
+    </mat-form-field> &nbsp;
+
+  </div>
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label class="edit_label" style="display: block;">countryCode</mat-label>
+      <input placeholder="{{action}} countryCode" matInput [(ngModel)]="local_data.countryCode">
+    </mat-form-field> &nbsp;
+
     <mat-form-field appearance="fill">
       <mat-label class="edit_label" style="display: block;">parentBhumId</mat-label>
       <input placeholder="{{action}} parentBhumId" matInput [(ngModel)]="local_data.parentBhumId">

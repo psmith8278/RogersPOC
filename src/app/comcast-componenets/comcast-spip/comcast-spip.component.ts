@@ -36,7 +36,11 @@ export class ComcastSPIPComponent {
         "parentBhumId": "5ede4d9cf41a0058f1949bbe",
         "status": "true",
         "messageStatus": "Success",
-        "source": "east"
+        "source": "east",
+        "partnerID": "comcast",
+        "locality": "ALPHARETTA",
+        "timezone": "MST",
+        "countryCode": "USA"
       },
       {
         "hubId": "2",
@@ -55,7 +59,11 @@ export class ComcastSPIPComponent {
         "parentBhumId": "5ede4d9cf41a0058f1949bbe",
         "status": "true",
         "messageStatus": "Success",
-        "source": "west"
+        "source": "west",
+        "partnerID": "comcast",
+        "locality": "ALPHARETTA",
+        "timezone": "MST",
+        "countryCode": "USA"
       },
       {
         "hubId": "3",
@@ -74,7 +82,11 @@ export class ComcastSPIPComponent {
         "parentBhumId": "5ede4d9cf41a0058f1949bbe",
         "status": "true",
         "messageStatus": "Success",
-        "source": "west"
+        "source": "west",
+        "partnerID": "comcast",
+        "locality": "ALPHARETTA",
+        "timezone": "MST",
+        "countryCode": "USA"
       },
       {
         "hubId": "4",
@@ -93,7 +105,11 @@ export class ComcastSPIPComponent {
         "parentBhumId": "5ede4d9cf41a0058f1949bbe",
         "status": "true",
         "messageStatus": "Failure",
-        "source": "west"
+        "source": "west",
+        "partnerID": "comcast",
+        "locality": "ALPHARETTA",
+        "timezone": "MST",
+        "countryCode": "USA"
       },
       {
         "hubId": "5",
@@ -112,7 +128,11 @@ export class ComcastSPIPComponent {
         "parentBhumId": "5ede4d9cf41a0058f1949bb1",
         "status": "true",
         "messageStatus": "Failure",
-        "source": "west"
+        "source": "west",
+        "partnerID": "comcast",
+        "locality": "ALPHARETTA",
+        "timezone": "MST",
+        "countryCode": "USA"
       },
       {
         "hubId": "6",
@@ -131,26 +151,11 @@ export class ComcastSPIPComponent {
         "parentBhumId": "5ede4d9cf41a0058f1949bb3",
         "status": "true",
         "messageStatus": "Saved",
-        "source": "west"
-      },
-      {
-        "hubId": "7",
-        "hubCode": "ABE2",
-        "hubName": "Edmonton South",
-        "hubType": "Secondary",
-        "primaryHubId": "5ede4d9cf41a0058f1949bb3",
-        "addr1": "101 Pine St",
-        "addr2": "Suite 400",
-        "city": "Edmonton",
-        "state": "AB",
-        "zipCode": "T5J 0L4",
-        "serviceStatus": "A",
-        "lattitude": "53.5461",
-        "logitude": "-113.4938",
-        "parentBhumId": "5ede4d9cf41a0058f1949bb3",
-        "status": "true",
-        "messageStatus": "Failure",
-        "source": "west"
+        "source": "west",
+        "partnerID": "comcast",
+        "locality": "ALPHARETTA",
+        "timezone": "MST",
+        "countryCode": "USA"
       }
     ];
     
