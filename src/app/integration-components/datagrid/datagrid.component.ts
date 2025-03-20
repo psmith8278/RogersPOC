@@ -195,13 +195,13 @@ export class DatagridComponent implements OnInit {
       lattitude: row_obj.data.lattitude,
       logitude: row_obj.data.logitude,
       parentBhumId: row_obj.data.parentBhumId,
-      status: row_obj.data.status,
-      messageStatus: row_obj.data.messageStatus,
-      source: row_obj.data.source,
       partnerID: row_obj.data.partnerID,
       locality: row_obj.data.locality,
       timezone: row_obj.data.timezone,
-      countryCode: row_obj.data.countryCode
+      countryCode: row_obj.data.countryCode,
+      status: row_obj.data.status,
+      messageStatus: row_obj.data.messageStatus,
+      source: row_obj.data.source
     };
 
     this.integrationService.updateData(sendData).subscribe({
