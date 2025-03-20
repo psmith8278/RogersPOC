@@ -16,4 +16,8 @@ export interface PeriodicElement {
     status: string;
     messageStatus: string;
     source: string;
+    partnerID: string;
+    locality: string;
+    timezone: string;
+    countryCode: string;
   }

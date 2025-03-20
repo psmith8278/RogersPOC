@@ -36,7 +36,6 @@ export class DatagridComponent implements OnInit {
     "city",
     "state",
     "serviceStatus",
-    "status",
     "messageStatus",
     "source"
   ]
@@ -52,7 +51,6 @@ export class DatagridComponent implements OnInit {
     "city": "City",
     "state": "State",
     "serviceStatus": "Service Status",
-    "status": "Status",
     "messageStatus": "Message Status",
     "source": "source"
   }
@@ -87,11 +85,14 @@ export class DatagridComponent implements OnInit {
   submitRow(rowData: PeriodicElement) {
     this.integrationService.submitRowData(rowData).subscribe({
       next: (response) => {
-        console.log("submit response", response);
+        console.log("submit response1", response);
+        console.log("submit response", response.status);
         alert("Successfully submitted");
+        this.getRogersGridData();
       },
       error: (error) => {
         alert(error);
+        this.getRogersGridData();
       }
     })
   }
@@ -111,6 +112,7 @@ export class DatagridComponent implements OnInit {
 
   handleFileSelect(evt: any) {
     var file = evt.target.files[0]; // FileList object
+    console.log("file content", file);
     if (file) {
       const reader = new FileReader();
       reader.readAsText(file);
@@ -131,6 +133,31 @@ export class DatagridComponent implements OnInit {
         return acc;
       }, {} as any);
     })
+
+    
+    // for(let i=0; i<= this.records.length; i++){
+    //   const sendData: PeriodicElement = {
+    //     hubId: this.records[i].HUB_ID,
+    //     hubCode: this.records[i].HUB,
+    //     hubName: this.records[i].hubName,
+    //     hubType: this.records[i].hubType,
+    //     primaryHubId: this.records[i].primaryHubId,
+    //     addr1: this.records[i].addr1,
+    //     addr2: this.records[i].addr2,
+    //     city: this.records[i].city,
+    //     state: this.records[i].state,
+    //     zipCode: this.records[i].zipCode,
+    //     serviceStatus: this.records[i].serviceStatus,
+    //     lattitude: this.records[i].lattitude,
+    //     logitude: this.records[i].logitude,
+    //     parentBhumId: this.records[i].parentBhumId,
+    //     status: this.records[i].status,
+    //     messageStatus: this.records[i].messageStatus,
+    //     source: this.records[i].source,
+    //   };
+    // }
+
+    // console.log("sgdjashdgjasdgja",this.records);
   }
 
   openDialog(action: any, obj: any,) {
@@ -171,6 +198,10 @@ export class DatagridComponent implements OnInit {
       status: row_obj.data.status,
       messageStatus: row_obj.data.messageStatus,
       source: row_obj.data.source,
+      partnerID: row_obj.data.partnerID,
+      locality: row_obj.data.locality,
+      timezone: row_obj.data.timezone,
+      countryCode: row_obj.data.countryCode
     };
 
     this.integrationService.updateData(sendData).subscribe({

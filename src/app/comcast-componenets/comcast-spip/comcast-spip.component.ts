@@ -36,7 +36,11 @@ export class ComcastSPIPComponent {
         "parentBhumId": "5ede4d9cf41a0058f1949bbe",
         "status": "true",
         "messageStatus": "Success",
-        "source": "east"
+        "source": "east",
+        "partnerID": "comcast",
+        "locality": "ALPHARETTA",
+        "timezone": "MST",
+        "countryCode": "USA"
       },
       {
         "hubId": "2",
@@ -55,7 +59,11 @@ export class ComcastSPIPComponent {
         "parentBhumId": "5ede4d9cf41a0058f1949bbe",
         "status": "true",
         "messageStatus": "Success",
-        "source": "west"
+        "source": "west",
+        "partnerID": "comcast",
+        "locality": "ALPHARETTA",
+        "timezone": "MST",
+        "countryCode": "USA"
       },
       {
         "hubId": "3",
@@ -74,7 +82,11 @@ export class ComcastSPIPComponent {
         "parentBhumId": "5ede4d9cf41a0058f1949bbe",
         "status": "true",
         "messageStatus": "Success",
-        "source": "west"
+        "source": "west",
+        "partnerID": "comcast",
+        "locality": "ALPHARETTA",
+        "timezone": "MST",
+        "countryCode": "USA"
       },
       {
         "hubId": "4",
@@ -93,7 +105,11 @@ export class ComcastSPIPComponent {
         "parentBhumId": "5ede4d9cf41a0058f1949bbe",
         "status": "true",
         "messageStatus": "Failure",
-        "source": "west"
+        "source": "west",
+        "partnerID": "comcast",
+        "locality": "ALPHARETTA",
+        "timezone": "MST",
+        "countryCode": "USA"
       },
       {
         "hubId": "5",
@@ -112,7 +128,11 @@ export class ComcastSPIPComponent {
         "parentBhumId": "5ede4d9cf41a0058f1949bb1",
         "status": "true",
         "messageStatus": "Failure",
-        "source": "west"
+        "source": "west",
+        "partnerID": "comcast",
+        "locality": "ALPHARETTA",
+        "timezone": "MST",
+        "countryCode": "USA"
       },
       {
         "hubId": "6",
@@ -131,7 +151,11 @@ export class ComcastSPIPComponent {
         "parentBhumId": "5ede4d9cf41a0058f1949bb3",
         "status": "true",
         "messageStatus": "Saved",
-        "source": "west"
+        "source": "west",
+        "partnerID": "comcast",
+        "locality": "ALPHARETTA",
+        "timezone": "MST",
+        "countryCode": "USA"
       },
       {
         "hubId": "7",
@@ -150,7 +174,11 @@ export class ComcastSPIPComponent {
         "parentBhumId": "5ede4d9cf41a0058f1949bb3",
         "status": "true",
         "messageStatus": "Failure",
-        "source": "west"
+        "source": "west",
+        "partnerID": "comcast",
+        "locality": "ALPHARETTA",
+        "timezone": "MST",
+        "countryCode": "USA"
       }
     ];
     
