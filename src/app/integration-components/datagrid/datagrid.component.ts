@@ -12,6 +12,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { NavbarComponent } from '../../navbar/navbar.component';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-datagrid',
@@ -86,12 +87,26 @@ export class DatagridComponent implements OnInit {
   submitRow(rowData: PeriodicElement) {
     this.integrationService.submitRowData(rowData).subscribe({
       next: (response) => {
-        alert(`Success:${response.message} (ID: ${response.id})`);
+        console.log("submit response", response);
+        alert("Successfully submitted");
       },
-      error: () => {
-        console.log("something went wrong");
+      error: (error) => {
+        alert(error);
       }
     })
+  }
+
+  private handleError(error: HttpErrorResponse) {
+    if (error.error instanceof ErrorEvent) //client side error
+    {
+      console.error('An error occurred:', error.error.message);
+    }
+    else  //server side error
+    {
+      //console.error(`Backend returned code ${error.status}, body was: ${error.error}`);
+      let resp = JSON.parse(error.error);
+      console.log(resp.message);//Since you returned a {message: ...} object from API
+    }
   }
 
   handleFileSelect(evt: any) {
@@ -132,13 +147,7 @@ export class DatagridComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result: { event: string; }) => {
       console.log(result);
-      if (result.event == 'Add') {
-        this.addRowData(result);
-      } else if (result.event == 'Update') {
-        this.updateRowData(result);
-      } else if (result.event == 'Delete') {
-        //this.deleteRowData(result.data);
-      }
+      this.updateRowData(result);
     });
   }
 
@@ -178,29 +187,61 @@ export class DatagridComponent implements OnInit {
     })
   }
 
-  addRowData(row_obj: any) {
-    console.log('updateRowData====>', this.dataSource);
-    var d = new Date();
-    this.dataSource.push({
-      hubId: d.getTime(),
-      hubName: row_obj.data.hubName,
-      hubCode: '',
-      hubType: '',
-      primaryHubId: '',
-      addr1: 'test',
-      addr2: 'test2',
-      city: 'ch',
-      state: 'tn',
-      zipCode: '88',
-      serviceStatus: 'A',
-      lattitude: '',
-      logitude: '',
-      parentBhumId: '',
-      status: '',
-      messageStatus: '',
-      source: ''
-    });
-    this.table.renderRows();
-  }
+  // addRowData(row_obj: any) {
+  //   console.log('updateRowData====>', row_obj.data);
+  //   var d = new Date();
+  //   // this.dataSource.push({
+  //   //   hubId: d.getTime(),
+  //   //   hubName: row_obj.data.hubName,
+  //   //   hubCode: '',
+  //   //   hubType: '',
+  //   //   primaryHubId: '',
+  //   //   addr1: 'test',
+  //   //   addr2: 'test2',
+  //   //   city: 'ch',
+  //   //   state: 'tn',
+  //   //   zipCode: '88',
+  //   //   serviceStatus: 'A',
+  //   //   lattitude: '',
+  //   //   logitude: '',
+  //   //   parentBhumId: '',
+  //   //   status: '',
+  //   //   messageStatus: '',
+  //   //   source: ''
+  //   // });
+  //   // this.table.renderRows();
+  //   const sendData: PeriodicElement = {
+  //     hubId: row_obj.data.hubId,
+  //     hubCode: row_obj.data.hubCode,
+  //     hubName: row_obj.data.hubName,
+  //     hubType: row_obj.data.hubType,
+  //     primaryHubId: row_obj.data.primaryHubId,
+  //     addr1: row_obj.data.addr1,
+  //     addr2: row_obj.data.addr2,
+  //     city: row_obj.data.city,
+  //     state: row_obj.data.state,
+  //     zipCode: row_obj.data.zipCode,
+  //     serviceStatus: row_obj.data.serviceStatus,
+  //     lattitude: row_obj.data.lattitude,
+  //     logitude: row_obj.data.logitude,
+  //     parentBhumId: row_obj.data.parentBhumId,
+  //     status: row_obj.data.status,
+  //     messageStatus: row_obj.data.messageStatus,
+  //     source: row_obj.data.source,
+  //   };
+  //   this.integrationService.updateData(sendData).subscribe({
+  //     next: (data) => {
+  //       this.getRogersGridData();
+  //       //this.dataSource = data;
+  //     },
+  //     error: (error) => {
+  //       console.log("Error fetching data:", error)
+  //     },
+  //     complete: () => {
+  //       this.getRogersGridData();
+  //       alert("Data updated Successfully");
+  //     }
+  //   })
+  // }
 
 }

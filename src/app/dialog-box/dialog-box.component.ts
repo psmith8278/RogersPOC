@@ -35,15 +35,19 @@ export class DialogBoxComponent {
   }
 
   doAction(){
-    this.dialogRef.close({event:this.action,data:this.local_data});
+    if (this.action === 'Add') {
+      this.dialogRef.close({event:this.action,data:this.searchHubData});
+    } else {
+      this.dialogRef.close({event:this.action,data:this.local_data});
+    }
   }
 
   fetchData(inputData: any) {
     // this.dummyData.find(PeriodicElement => PeriodicElement.hubCode == data);
     this.integrationService.getHubData(inputData).subscribe({
       next : (data) =>{
-        console.log('fetchData=====>', data.find((hubSingle: any) => hubSingle.hubCode === inputData));
-        this.searchHubData = data.find(hubSingle => hubSingle.hubCode === inputData);
+        console.log('fetchData=====>', data[0]);
+        this.searchHubData = data[0]
         return this.searchHubData;
       },
       error: (error) => {
